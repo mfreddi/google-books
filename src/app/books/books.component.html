@@ -1,0 +1,14 @@
+<div class="tabs">
+  <button (click)="showData('books')" [disabled]="type === 'books'">Show All</button>
+  <button (click)="showData('favoriteBooks')" [disabled]="type === favoriteKey">Show Favorite</button>
+</div>
+<div class="books">
+  <form [formGroup]="searchForm" novalidate>
+    <input type="text" formControlName="searchName" />
+    <label class="books--item" *ngFor="let item of (showBooks | async) | liveFilter:searchText:'title'; index as i">
+      <input *ngIf="type !== favoriteKey" (change)="toggleFavorite($event, item)" [checked]="item.checked" type="checkbox"/>
+      {{i}}: {{item.title}}
+    </label>
+  </form>
+  <button (click)="loadMore()" *ngIf="type === 'books'" [disabled]="isLoading">Load more</button>
+</div>
