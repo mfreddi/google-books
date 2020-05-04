@@ -1,4 +1,13 @@
 # BooksGoogle
+- Вывод списка.
+
+- подгрузка дополнительных кник
+
+- добавление книг в избраное
+
+-синхронизация избраного при открытии в разных вкладках
+
+- поиск по названию
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
